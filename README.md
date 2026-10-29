@@ -1,6 +1,6 @@
 # Riverdale Math Team website
 
-Plain HTML + one CSS file. No build step, no frameworks — edit a file, push, done.
+Plain HTML + one CSS file. No build step, no frameworks — edit a file, push, done. 
 
 ## Files
 
