@@ -1,0 +1,167 @@
+/* Riverdale Math Team — one stylesheet for every page.
+   Kept deliberately plain: serif text, one link color, thin rules. */
+
+:root {
+  --text: #1f1f1f;
+  --muted: #666;
+  --rule: #cfcfcf;
+  --link: #1d3f8f;
+  --visited: #5a3d8a;
+  --shade: #f4f4f1;
+  --accent: #8a1c1c;   /* used sparingly: the title and "important" notes */
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 28px 16px 56px;
+  background: #fff;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a { color: var(--link); }
+a:visited { color: var(--visited); }
+a:hover { text-decoration-thickness: 2px; }
+
+/* ---------- header + nav ---------- */
+
+.site-header { border-bottom: 1px solid var(--text); padding-bottom: 10px; margin-bottom: 6px; }
+
+.site-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+}
+.site-header h1 a, .site-header h1 a:visited { color: inherit; text-decoration: none; }
+
+.site-header .subtitle { margin: 2px 0 0; color: var(--muted); font-style: italic; font-size: 15px; }
+
+nav.site-nav { font-size: 15px; padding: 6px 0 0; margin-bottom: 26px; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
+nav.site-nav a, nav.site-nav span { white-space: nowrap; }
+nav.site-nav span.current { font-weight: bold; }
+nav.site-nav .sep { color: #aaa; margin: 0 6px; }
+
+/* ---------- text ---------- */
+
+h2 { font-size: 22px; font-weight: normal; border-bottom: 1px solid var(--rule); padding-bottom: 3px; margin: 34px 0 12px; }
+h3 { font-size: 18px; margin: 24px 0 8px; }
+h2:first-of-type { margin-top: 8px; }
+
+p { margin: 0 0 14px; }
+ul, ol { padding-left: 24px; margin: 0 0 14px; }
+li { margin-bottom: 4px; }
+
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+
+.note {
+  border-left: 3px solid var(--accent);
+  background: var(--shade);
+  padding: 10px 14px;
+  margin: 0 0 18px;
+}
+.note p:last-child { margin-bottom: 0; }
+
+/* definition-style list for people / meeting info */
+dl.info { display: grid; grid-template-columns: max-content 1fr; gap: 4px 18px; margin: 0 0 14px; }
+dl.info dt { font-weight: bold; }
+dl.info dd { margin: 0; }
+
+/* dated news list on the home page */
+ul.news { list-style: none; padding: 0; }
+ul.news li { margin-bottom: 8px; }
+ul.news .date { color: var(--muted); font-size: 14px; display: inline-block; min-width: 110px; }
+
+/* ---------- tables ---------- */
+
+.table-wrap { overflow-x: auto; margin: 0 0 16px; -webkit-overflow-scrolling: touch; }
+
+table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.4; }
+th, td { border: 1px solid var(--rule); padding: 7px 9px; text-align: left; vertical-align: top; }
+thead th { background: var(--shade); font-weight: bold; white-space: nowrap; }
+tbody tr.season td { background: #fafaf8; font-weight: bold; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); padding: 5px 9px; }
+
+td .est { font-style: italic; color: #555; }
+td .passed { color: #888; text-decoration: line-through; }
+td .tag { font-size: 12px; color: var(--muted); white-space: nowrap; }
+td.nowrap { white-space: nowrap; }
+.scroll-hint { display: none; margin-bottom: 6px; }
+
+/* ---------- formula sheet ---------- */
+
+.toc { columns: 2; column-gap: 32px; font-size: 15px; }
+.toc li { break-inside: avoid; }
+
+table.formulas td:first-child { width: 34%; font-weight: bold; }
+table.formulas td { vertical-align: middle; }
+table.formulas .why { display: block; font-weight: normal; font-size: 13px; color: var(--muted); }
+
+.amc12 { font-size: 11px; font-family: Verdana, Arial, sans-serif; border: 1px solid var(--accent); color: var(--accent); padding: 0 4px; border-radius: 2px; vertical-align: 2px; white-space: nowrap; }
+
+.back-top { font-size: 13px; text-align: right; margin-top: -6px; }
+
+/* ---------- videos ---------- */
+
+ul.videos { list-style: none; padding: 0; }
+ul.videos li { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px dotted var(--rule); margin: 0; }
+ul.videos li:last-child { border-bottom: 0; }
+ul.videos img { width: 168px; height: 94px; object-fit: cover; border: 1px solid var(--rule); flex: none; background: var(--shade); }
+ul.videos .title { font-weight: bold; }
+ul.videos .meta { color: var(--muted); font-size: 14px; }
+ul.videos p { margin: 4px 0 0; font-size: 15px; }
+.fav { font-size: 12px; font-family: Verdana, Arial, sans-serif; background: var(--accent); color: #fff; padding: 1px 5px; border-radius: 2px; vertical-align: 2px; }
+
+/* ---------- past wins ---------- */
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; margin-bottom: 18px; }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.gallery figcaption { font-size: 14px; margin-top: 6px; line-height: 1.4; }
+.gallery figcaption b { display: block; }
+.gallery .placeholder {
+  aspect-ratio: 4 / 3;
+  border: 1px dashed #aaa;
+  background: var(--shade);
+  display: flex; align-items: center; justify-content: center;
+  color: #999; font-style: italic; font-size: 14px;
+}
+
+/* ---------- footer ---------- */
+
+footer.site-footer { margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 10px; font-size: 13px; color: var(--muted); }
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 600px) {
+  body { font-size: 16px; padding-top: 18px; }
+  .site-header h1 { font-size: 25px; }
+  .toc { columns: 1; }
+  dl.info { grid-template-columns: 1fr; gap: 0; }
+  dl.info dd { margin-bottom: 8px; }
+  ul.videos li { flex-direction: column; }
+  ul.videos img { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+  /* stack formula rows: name on top, formula underneath */
+  table.formulas, table.formulas tbody, table.formulas tr, table.formulas td { display: block; width: 100%; }
+  table.formulas tr { border: 1px solid var(--rule); border-top: 0; }
+  table.formulas tr:first-child { border-top: 1px solid var(--rule); }
+  table.formulas td { border: 0; }
+  table.formulas td:first-child { width: 100%; background: var(--shade); padding-bottom: 5px; }
+  table.formulas td:last-child { overflow-x: auto; }
+  table.comps { min-width: 720px; }
+  .scroll-hint { display: block; }
+}
+
+@media print {
+  nav.site-nav, footer.site-footer, .back-top { display: none; }
+  body { max-width: none; font-size: 12pt; }
+  a { color: inherit; text-decoration: none; }
+}
